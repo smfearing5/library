@@ -1,0 +1,22 @@
+body {
+    background-color: #333;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#library {
+    background-color: #751;
+}
+
+#form-container {
+    background-color: #69b;
+    width: 26rem;
+}
+
+#library,
+#form-container {
+    border-radius: 1rem;
+    padding: 1rem;
+}
