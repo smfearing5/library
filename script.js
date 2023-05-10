@@ -4,6 +4,51 @@ const newBookButton = document.querySelector("#new-book-btn");
 const newBookForm = document.querySelector("#new-book-form");
 const addBookButton = document.querySelector("#add-book-btn");
 
+// class constructor
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+
+        this.info = () => {
+            let readStatus;
+            if (read) readStatus = "already read."
+            else readStatus = "not read yet.";
+            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus}`; 
+        };
+    }
+
+    get title() {
+        return this._title;
+    }
+    set title(value) {
+        this._title = value;
+    }
+
+    get author() {
+        return this._author;
+    }
+    set author(value) {
+        this._author = value;
+    }
+
+    get pages() {
+        return this._pages;
+    }
+    set pages(value) {
+        this._pages = value;
+    }
+
+    get pages() {
+        return this._pages;
+    }
+    set pages(value) {
+        this._pages = value;
+    }
+}
+
 // main
 let myLibrary = [];
 defaultBooks();
@@ -134,19 +179,4 @@ function addBookToLibrary() {
 function removeBook(index) {
     myLibrary.splice(index, 1);
     displayLibrary();
-}
-
-// object constructors
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-
-    this.info = function() {
-        let readStatus;
-        if (read) readStatus = "already read."
-        else readStatus = "not read yet.";
-        return `${title} by ${author}, ${pages} pages, ${readStatus}`; 
-    };
 }
